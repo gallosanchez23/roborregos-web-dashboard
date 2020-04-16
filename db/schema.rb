@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_010929) do
+ActiveRecord::Schema.define(version: 2020_04_16_012003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sponsor_contacts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "fathers_last_name"
+    t.string "mothers_last_name"
+    t.string "email"
+    t.string "phone_number"
+    t.text "notes"
+    t.bigint "sponsor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sponsor_id"], name: "index_sponsor_contacts_on_sponsor_id"
+  end
 
   create_table "sponsors", force: :cascade do |t|
     t.string "name"
