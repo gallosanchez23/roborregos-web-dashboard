@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_012003) do
+ActiveRecord::Schema.define(version: 2020_04_16_013909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arrangements", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "amount"
+    t.integer "sponsorship_type"
+    t.bigint "sponsor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sponsor_id"], name: "index_arrangements_on_sponsor_id"
+  end
 
   create_table "sponsor_contacts", force: :cascade do |t|
     t.string "first_name"
