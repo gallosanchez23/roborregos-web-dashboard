@@ -51,6 +51,8 @@ Before setting up the project, you should have installed the following developme
 
 Once you have installed the required third-party software, you can follow this steps:
 
+**Note:** remember that you may need the sudo command.
+
 1. Clone the project repository on your local machine.
 
 	SSH:
@@ -78,27 +80,13 @@ Once you have installed the required third-party software, you can follow this s
 
 ### Running the stack for development
 
-In your terminal, run:
-
-
-```bash
-$ docker-compose up
-```
-
-This command will start the Rails application and display the logs on your terminal. Use `Ctrl + C` to exit the logs and turn the application down. Otherwise, in order to run the service in the background, just run:
-
-
-```bash
-$ docker-compose up -d
-```
-
-If it is the first time you are running the project, you will need to create the project's database. For this, fire up a new terminal and navigate to the project's directory. Once you are there, run:
+If it is the first time you are running the project, you will need to create the project's database. For this, simply run:
 
 ```bash
 $ docker-compose run web rails db:create
 ```
 
-This command will use Rails within the existing and running container to create the development and test databases. This should output somehting like:
+This command will use Rails within the existing and running container to create the development and test databases. This should output something like:
 
 ```bash
 Starting roborregos-web-dashboard_db_1 ... done
@@ -110,6 +98,20 @@ Finally, you will need to run the pending db migrations. For this, run:
 
 ```bash
 $ docker-compose run web rails db:migrate
+```
+
+If you've previously done all the above, then to start the Rails application and display the logs on your terminal simply run the following command.
+
+**Note:** to exit the logs and turn the application down remember to use `Ctrl + C`.
+
+```bash
+$ docker-compose up
+```
+
+If on the other hand you wish to run the service in the background, just run:
+
+```bash
+$ docker-compose up -d
 ```
 
 You are now ready to open the application and start collaborating with the project. Go to your browser and enter [localhost:3000](http://localhost:3000/) to see the running application. Enjoy!
