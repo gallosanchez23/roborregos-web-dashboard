@@ -72,8 +72,6 @@ Once you have installed the required third-party software, you can follow this s
 
 3. Create the Docker image.
 
-	`docker-compose`:
-
 	```bash
 	$ docker-compose build
 	```
@@ -82,7 +80,6 @@ Once you have installed the required third-party software, you can follow this s
 
 In your terminal, run:
 
-`docker-compose`:
 
 ```bash
 $ docker-compose up
@@ -90,7 +87,6 @@ $ docker-compose up
 
 This command will start the Rails application and display the logs on your terminal. Use `Ctrl + C` to exit the logs and turn the application down. Otherwise, in order to run the service in the background, just run:
 
-`docker-compose`:
 
 ```bash
 $ docker-compose up -d
@@ -122,7 +118,6 @@ You are now ready to open the application and start collaborating with the proje
 
 In order to stop `roborregos-web-dashboard` entirely you can run:
 
-`docker-compose`:
 
 ```bash
 $ docker-compose stop
@@ -130,7 +125,6 @@ $ docker-compose stop
 
 If you want to stop the services and remove the containers:
 
-`docker-compose`:
 
 ```bash
 $ docker-compose down
@@ -138,7 +132,6 @@ $ docker-compose down
 
 If you only want to stop one service in particular, you can specify it with the following command:
 
-`docker-compose`:
 
 ```bash
 $ docker-compose stop [service-name]
