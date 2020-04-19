@@ -70,7 +70,7 @@ Once you have installed the required third-party software, you can follow this s
 	$ cd roborregos-web-dashboard
 	```
 
-3. Create the Docker image.
+3. Create the Docker image (This could take a couple minutes).
 
 	```bash
 	$ docker-compose build
