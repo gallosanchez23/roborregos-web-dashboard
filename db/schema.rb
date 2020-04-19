@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_005027) do
+ActiveRecord::Schema.define(version: 2020_04_19_010222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "team_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_achievements_on_category_id"
+    t.index ["team_id"], name: "index_achievements_on_team_id"
+  end
 
   create_table "arrangements", force: :cascade do |t|
     t.datetime "start_date"
