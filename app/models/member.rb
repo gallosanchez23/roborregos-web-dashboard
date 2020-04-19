@@ -10,6 +10,9 @@ class Member < ApplicationRecord
             :mothers_last_name,
             presence: true
 
+  has_many :team_members
+  has_many :teams, through: :team_members
+
   enum role: {
     software: 0,
     marketing: 1,
