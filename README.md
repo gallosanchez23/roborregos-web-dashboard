@@ -92,7 +92,7 @@ This command will start the Rails application and display the logs on your termi
 $ docker-compose up -d
 ```
 
-If it is the first time you are running running the project, you will need to create the project's database. For this, fire up a new terminal and navigate to the project's directory. Once you are there, run:
+If it is the first time you are running the project, you will need to create the project's database. For this, fire up a new terminal and navigate to the project's directory. Once you are there, run:
 
 ```bash
 $ docker-compose run web rails db:create
