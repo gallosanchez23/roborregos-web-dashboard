@@ -12,6 +12,8 @@ class Member < ApplicationRecord
 
   has_many :team_members
   has_many :teams, through: :team_members
+  has_many :arrangement_members
+  has_many :arrangements, through: :arrangement_members
 
   enum role: {
     software: 0,
