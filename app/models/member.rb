@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  devise :database_authenticatable
+
   validates :role,
             :email,
             :major,
@@ -23,7 +25,7 @@ class Member < ApplicationRecord
   }
 
   enum status: {
-    active: 0
+    active: 0,
     neutral: 1,
     conditioned: 2,
     inactive: 3,
