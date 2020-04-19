@@ -3,4 +3,5 @@ class Category < ApplicationRecord
             presence: true
 
   has_many :teams
+  has_many :achievements
 end
