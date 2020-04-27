@@ -15,6 +15,26 @@ ActiveRecord::Schema.define(version: 2020_04_26_213351) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "achievements", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "team_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_achievements_on_category_id"
+    t.index ["team_id"], name: "index_achievements_on_team_id"
+  end
+
+  create_table "arrangement_members", force: :cascade do |t|
+    t.bigint "member_id"
+    t.bigint "arrangement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["arrangement_id"], name: "index_arrangement_members_on_arrangement_id"
+    t.index ["member_id"], name: "index_arrangement_members_on_member_id"
+  end
+
   create_table "arrangements", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
@@ -26,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_04_26_213351) do
     t.index ["sponsor_id"], name: "index_arrangements_on_sponsor_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "reference_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.datetime "start_date"
@@ -35,6 +63,31 @@ ActiveRecord::Schema.define(version: 2020_04_26_213351) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sponsor_id"], name: "index_events_on_sponsor_id"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "first_name"
+    t.string "fathers_last_name"
+    t.string "mothers_last_name"
+    t.string "email"
+    t.integer "major"
+    t.string "avatar"
+    t.string "github_username"
+    t.string "github_url"
+    t.string "linkedin_username"
+    t.string "linkedin_url"
+    t.string "resume_url"
+    t.integer "status"
+    t.integer "role"
+    t.text "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "generation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.index ["username"], name: "index_members_on_username", unique: true
   end
 
   create_table "sponsor_contacts", force: :cascade do |t|
@@ -59,5 +112,44 @@ ActiveRecord::Schema.define(version: 2020_04_26_213351) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "events", "sponsors"
+  create_table "team_members", force: :cascade do |t|
+    t.bigint "team_id"
+    t.bigint "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_team_members_on_member_id"
+    t.index ["team_id"], name: "index_team_members_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "github_url"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_teams_on_category_id"
+  end
+
+  create_table "tournament_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "tournament_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_tournament_categories_on_category_id"
+    t.index ["tournament_id"], name: "index_tournament_categories_on_tournament_id"
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "description"
+    t.integer "type"
+    t.string "country"
+    t.string "citi"
+    t.string "reference_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
