@@ -8,7 +8,7 @@ services:
   test: &app
     image: roborregos/dashboard:1.0
     build: .
-    command: rspec
+    command: rspec --format documentation
     volumes:
       - .:/app
     depends_on:
