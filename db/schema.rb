@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_144609) do
+ActiveRecord::Schema.define(version: 2020_04_27_170330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2020_04_27_144609) do
     t.string "reference_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "event_members", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_members_on_event_id"
+    t.index ["member_id"], name: "index_event_members_on_member_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -152,4 +161,5 @@ ActiveRecord::Schema.define(version: 2020_04_27_144609) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "sponsors"
 end
