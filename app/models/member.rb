@@ -7,7 +7,7 @@ class Member < ApplicationRecord
             :status,
             :generation,
             :first_name,
-            :joining_date,
+            :start_date,
             :fathers_last_name,
             :mothers_last_name,
             presence: true
