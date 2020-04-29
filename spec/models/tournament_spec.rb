@@ -15,7 +15,7 @@ RSpec.describe Tournament, type: :model do
   end
 
   context 'associations' do
-    it { should have_many(:categories) }
     it { should have_many(:tournament_categories) }
+    it { should have_many(:categories).through(:tournament_categories) }
   end
 end
