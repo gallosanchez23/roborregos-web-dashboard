@@ -4,5 +4,5 @@ class TeamMember < ApplicationRecord
             presence: true
 
   belongs_to :team
-  belings_to :member
+  belongs_to :member
 end
