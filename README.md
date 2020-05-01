@@ -41,7 +41,8 @@ You should ask for access to these tools if you don't have it already:
 
 #### Third-party
 
-Before setting up the project, you should have installed the following development tools:
+Before setting up the project, you should have installed the following
+development tools:
 
 * [Git](https://git-scm.com/downloads)
 * [Docker](https://runnable.com/docker/getting-started/)
@@ -49,7 +50,8 @@ Before setting up the project, you should have installed the following developme
 
 #### Initial build
 
-Once you have installed the required third-party software, you can follow this steps:
+Once you have installed the required third-party software, you can follow this
+steps:
 
 1. Clone the project repository on your local machine.
 
@@ -76,29 +78,24 @@ Once you have installed the required third-party software, you can follow this s
 	$ docker-compose build
 	```
 
+***Note: If using Linux, remember that you may need the sudo command in order
+to avoid permission-denied errors. Other options is to apply executable
+permissions to the docker-compose binary. You can fine more information about
+this in the [instalation guide](https://docs.docker.com/compose/install/).***
+
 ### Running the stack for development
 
-In your terminal, run:
-
-
-```bash
-$ docker-compose up
-```
-
-This command will start the Rails application and display the logs on your terminal. Use `Ctrl + C` to exit the logs and turn the application down. Otherwise, in order to run the service in the background, just run:
-
-
-```bash
-$ docker-compose up -d
-```
-
-If it is the first time you are running the project, you will need to create the project's database. For this, fire up a new terminal and navigate to the project's directory. Once you are there, run:
+If it is the first time you are running the project, you will need to create
+the project's database. For this, fire up a new terminal and navigate to the
+project's directory. Once you are there, run:
 
 ```bash
 $ docker-compose run web rails db:create
 ```
 
-This command will use Rails within the existing and running container to create the development and test databases. This should output somehting like:
+This command will use Rails within the existing and running container to create
+the development and test databases for our project. This should output
+something like:
 
 ```bash
 Starting roborregos-web-dashboard_db_1 ... done
@@ -112,7 +109,23 @@ Finally, you will need to run the pending db migrations. For this, run:
 $ docker-compose run web rails db:migrate
 ```
 
-You are now ready to open the application and start collaborating with the project. Go to your browser and enter [localhost:3000](http://localhost:3000/) to see the running application. Enjoy!
+If you've previously done all the above, simply run:
+
+```bash
+$ docker-compose up
+```
+
+This command will start the Rails application and display the logs on your
+terminal. Use `Ctrl + C` to exit the logs and turn the application down.
+Otherwise, in order to run the service in the background, just run:
+
+```bash
+$ docker-compose up -d
+```
+
+You are now ready to open the application and start collaborating with the
+project. Go to your browser and enter [localhost:3000](http://localhost:3000/)
+to see the running application. Enjoy!
 
 ### Stopping services
 
@@ -130,7 +143,8 @@ If you want to stop the services and remove the containers:
 $ docker-compose down
 ```
 
-If you only want to stop one service in particular, you can specify it with the following command:
+If you only want to stop one service in particular, you can specify it with the
+following command:
 
 
 ```bash
@@ -158,4 +172,5 @@ Also, if the container is already running, you can always run:
 $ docker-compose run web bash
 ```
 
-to enter the container's console, from where you can interact directly with Rails and every program installed in the containers environment.
+to enter the container's console, from where you can interact directly with
+Rails and every program installed in the containers environment.
