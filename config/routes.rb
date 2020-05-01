@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'bootstrap_test#index'
+  devise_for :members
 end
