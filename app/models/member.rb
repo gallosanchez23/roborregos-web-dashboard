@@ -17,6 +17,11 @@ class Member < ApplicationRecord
   has_many :arrangement_members
   has_many :arrangements, through: :arrangement_members
 
+  scope :sorted_by_role, -> { order('role') }
+  scope :sorted_by_major, -> { order('major') }
+  scope :sorted_by_status, -> { order('status') }
+  scope :sorted_by_generation, -> { order('generation') }
+
   enum role: {
     software: 0,
     marketing: 1,
@@ -49,6 +54,10 @@ class Member < ApplicationRecord
     INA: 13,
     ITD: 14,
     BCT: 15,
+    LAD: 16,
   }
-end
 
+  def full_name
+    "#{self.first_name} #{self.fathers_last_name} #{self.mothers_last_name}"
+  end
+end
