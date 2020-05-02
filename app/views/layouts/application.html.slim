@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title
+      | RoBorregos Dashboard
+
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    .wrapper
+      = render 'layouts/sidebar'
+      #content
+        / nav.navbar.navbar-expanded-lg.navbar-light.bg-light
+        /   .container-fluid
+        /     button#sidebarCollapse.btn.btn-info type='button'
+        /       span
+        /         | Toggle
+        .container-fluid
+          = yield
