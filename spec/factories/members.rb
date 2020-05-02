@@ -4,6 +4,7 @@ FactoryBot.define do
     email             { FFaker::Internet.email }
     major             { 'ITC' }
     status            { 'active' }
+    username          { FFaker::Internet.user_name }
     generation        { 2 }
     first_name        { FFaker::Name.first_name }
     start_date      { Date.today - 3.years }
