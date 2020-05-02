@@ -1,0 +1,23 @@
+#contact_info_form.card.not-first-card
+  .card-header
+    = fa_icon 'address-book fw', class: 'mr-2'
+    = t('.section_title_contact')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :email, t('.label_email'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :email, class: 'form-control'
+        .form-group.row
+          = f.label :github_username, t('.label_github_username'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :github_username, class: 'form-control'
+        .form-group.row
+          = f.label :linkedin_username, t('.label_linkedin_username'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :linkedin_username, class: 'form-control'
+        .form-group.row
+          = f.label :description, t('.label_description'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_area :description, class: 'form-control', rows: 3
