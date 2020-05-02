@@ -1,0 +1,75 @@
+es:
+  layouts:
+    sidebar:
+      title: 'RoBorregos'
+      members: 'Miembros'
+  members:
+    index:
+      title: 'Miembros'
+      return: 'Regresar'
+      sort_by: 'Ordenar por'
+      register: 'Registrar'
+      sort_by_role: 'Rol'
+      sort_by_major: 'Carrera'
+      sort_by_status: 'Estatus'
+      sort_by_generation: 'Generación'
+    member:
+      delete_confirmation: '¿Estás seguro de que quieres eliminar este miembro?'
+      tooltip_edit: 'Editar'
+      tooltip_view: 'Detalles'
+      tooltip_delete: 'Eliminar'
+    show:
+      return: 'Regresar'
+      edit: 'Editar'
+      delete: 'Eliminar'
+      delete_confirmation: '¿Estás seguro de que quieres eliminar este miembro?'
+      label_email: 'Email:'
+      label_major: 'Carrera:'
+      label_github_username: 'Username Github:'
+      label_linkedin_username: 'Username LinkedIn:'
+      label_status: 'Estatus actual:'
+      label_role: 'Área:'
+      label_description: 'Descripción:'
+      label_start_date: 'Fecha de inicio:'
+      label_generation: 'Generación:'
+      section_title_contact: 'Contacto'
+      section_title_roborregos: 'RoBorregos'
+    new:
+      title: 'Nuevo miembro'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    edit:
+      title: 'Editar - %{member}'
+      submit: 'Guardar'
+      cancel: 'Regresar'
+    personal_info_form:
+      section_title_personal_info: 'Datos personales'
+      label_first_name: 'Nombre(s):'
+      label_fathers_last_name: 'Apellido paterno:'
+      label_mothers_last_name: 'Apellido materno:'
+      label_major: 'Carrera:'
+      label_avatar: 'Avatar:'
+    contact_info_form:
+      section_title_contact: 'Contacto'
+      label_email: 'Email:'
+      label_github_username: 'Username Github:'
+      label_linkedin_username: 'Username LinkedIn:'
+      label_description: 'Descripción:'
+    roborregos_info_form:
+      section_title_roborregos: 'RoBorregos'
+      label_status: 'Estatus actual:'
+      label_role: 'Área:'
+      label_start_date: 'Fecha de inicio:'
+      label_generation: 'Generación:'
+  options:
+    members_role:
+      software: 'Software'
+      marketing: 'Mercadotecnia'
+      mechanics: 'Mecánica'
+      electronics: 'Electrónica'
+    members_status:
+      active: 'Activo'
+      neutral: 'Neutral'
+      conditioned: 'Condicionado'
+      inactive: 'Inactivo'
+      affiliated: 'Afiliado'
