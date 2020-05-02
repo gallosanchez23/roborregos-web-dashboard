@@ -1,0 +1,26 @@
+nav#sidebar
+  .sidebar-header
+    h3
+      = t('.title')
+
+  ul.list-unstyled.components
+    p
+      = controller_name.capitalize
+    li.active
+      = link_to members_path do
+        = t('.members')
+
+    li
+      a href='#'
+        | Patrocinadores
+
+    li
+      a.dropdown-toggle href='#tournamentsSubMenu' data-toggle='collapse' aria-expanded='false'
+        | Torneos
+      ul.collapse.list-unstyled#tournamentsSubMenu
+        li
+          a href='#'
+            | Todos
+        li
+          a href='#'
+            | Crear
