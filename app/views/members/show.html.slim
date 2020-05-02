@@ -1,0 +1,89 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'user fw', class: 'mr-2'
+        = @member.full_name
+
+  .nav-row.row.align-items-end.pb-2
+    .col-3
+      = link_to members_path, class: 'btn btn-info' do
+        = fa_icon 'angle-left', class: 'mr-2'
+        = t('.return')
+    .col-6
+      = link_to edit_member_path(@member.id), class: 'btn btn-warning' do
+        = fa_icon 'edit', class: 'mr-2'
+        = t('.edit')
+    .col-3
+      = link_to member_path(@member.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
+        = fa_icon 'trash-o', class: 'mr-2'
+        = t('.edit')
+
+#member_info_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #contact_info.card
+        .card-header
+          = fa_icon 'address-book fw', class: 'mr-2'
+          = t('.section_title_contact')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_email')
+              .col-8
+                = @member.email
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_github_username')
+              .col-8
+                = @member.github_username
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_linkedin_username')
+              .col-8
+                = @member.linkedin_username
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_description')
+              .col-8
+                = @member.description
+
+      #roborregos_info.card.not-first-card
+        .card-header
+          = fa_icon 'sitemap fw', class: 'mr-2'
+          = t('.section_title_roborregos')
+        ul.list-group.list-group-flush
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_major')
+              .col-8
+                = @member.major
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_generation')
+              .col-8
+                = @member.generation
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_role')
+              .col-8
+                = @member.role
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_status')
+              .col-8
+                = @member.status
+          li.list-group-item
+            .row
+              .col-4.info-title
+                = t('.label_start_date')
+              .col-8
+                = @member.start_date.to_date.to_s(:long)
