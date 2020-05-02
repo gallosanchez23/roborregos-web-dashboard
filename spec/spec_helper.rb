@@ -14,7 +14,11 @@ ENV['RAILS_ENV'] = 'test'
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'i18n'
+
 RSpec.configure do |config|
+  I18n.available_locales = :es
+  I18n.default_locale = :es
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

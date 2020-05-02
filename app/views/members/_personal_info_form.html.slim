@@ -1,0 +1,23 @@
+#personal_info_form.card
+  .card-header
+    = fa_icon 'info fw', class: 'mr-2'
+    = t('.section_title_personal_info')
+  .card-body
+    .row.justify-content-center
+      .col-md-12
+        .form-group.row
+          = f.label :first_name, t('.label_first_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :first_name, class: 'form-control'
+        .form-group.row
+          = f.label :fathers_last_name, t('.label_fathers_last_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :fathers_last_name, class: 'form-control'
+        .form-group.row
+          = f.label :mothers_last_name, t('.label_mothers_last_name'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.text_field :mothers_last_name, class: 'form-control'
+        .form-group.row
+          = f.label :major, t('.label_major'), class: 'col-sm-3 col-form-label'
+          .col-sm-9
+            = f.select :major, major_options, {}, class: 'form-control'
