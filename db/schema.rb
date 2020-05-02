@@ -161,5 +161,4 @@ ActiveRecord::Schema.define(version: 2020_04_27_170330) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "events", "sponsors"
 end
