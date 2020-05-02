@@ -16,6 +16,8 @@ class Member < ApplicationRecord
   has_many :teams, through: :team_members
   has_many :arrangement_members
   has_many :arrangements, through: :arrangement_members
+  has_many :event_members
+  has_many :events, through: :event_members
 
   scope :sorted_by_role, -> { order('role') }
   scope :sorted_by_major, -> { order('major') }
