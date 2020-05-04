@@ -11,12 +11,8 @@ html
 
   body
     .wrapper
-      = render 'layouts/sidebar'
+      = render partial: 'layouts/sidebar'
       #content
-        / nav.navbar.navbar-expanded-lg.navbar-light.bg-light
-        /   .container-fluid
-        /     button#sidebarCollapse.btn.btn-info type='button'
-        /       span
-        /         | Toggle
+        = render partial: 'layouts/flash'
         .container-fluid
           = yield
