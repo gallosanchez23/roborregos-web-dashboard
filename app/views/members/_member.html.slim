@@ -1,11 +1,11 @@
 li.list-group-item.single-member
   .row
-    .col-4
+    .col
       .d-block
         = status_icon(member.status)
         = member.full_name
       = role_badge(member.role)
-    .col
+    .col-3.pull-right
       .pull-right
         = link_to member_path(member.id), class: 'text-info' do
           = fa_icon 'eye fw', class: 'mr-2', 'data-toggle': 'tooltip', 'data-placement': 'top', title: t('.tooltip_view')

@@ -17,7 +17,7 @@ header
     .col-3
       = link_to member_path(@member.id), method: :delete, data: { confirm: t('.delete_confirmation') }, class: 'btn btn-danger' do
         = fa_icon 'trash-o', class: 'mr-2'
-        = t('.edit')
+        = t('.delete')
 
 #member_info_section.content-section
   .row.justify-content-center
