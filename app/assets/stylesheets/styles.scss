@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #FAFAFA;
+  height: 100vh;
 }
 
 .container-fluid {
@@ -10,4 +11,71 @@ body {
 .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.alert {
+  display: inline-block;
+  margin: 0px auto;
+  position: absolute;
+  transition: all 0.5s ease-in-out 0s;
+  z-index: 1031;
+  top: 15px;
+  left: 0px;
+  right: 0px;
+}
+
+.btn-orange {
+  color: #fff;
+  background: #f39c12;
+  border-color: #f39c12;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+    background: #e39210;
+    border-color: #e39210;
+  }
+}
+
+.btn-purple {
+  color: #fff;
+  background: #9b59b6;
+  border-color: #9b59b6;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+    background: #8e44ad;
+    border-color: #8e44ad;
+  }
+}
+
+.btn-navy {
+  color: #fff;
+  background: #34495e;
+  border-color: #34495e;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+    background: #2c3e50;
+    border-color: #2c3e50;
+  }
+}
+
+.btn-turquoise {
+  color: #fff;
+  background: #1abc9c;
+  border-color: #1abc9c;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+    background: #16a085;
+    border-color: #16a085;
+  }
 }

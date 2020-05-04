@@ -1,0 +1,5 @@
+- flash.each do |key, msg|
+  .row.justify-content-center
+    .col-10
+      .alert.animated.fadeInDown.text-center role='alert' class="alert-#{alert_class(key)}"
+        = msg
