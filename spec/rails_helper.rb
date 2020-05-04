@@ -62,6 +62,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
+  config.include Warden::Test::Helpers
 end
 
 Shoulda::Matchers.configure do |config|
@@ -69,4 +71,13 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+def authenticate_with_tokens(token, member_token)
+  options = { member_token: member_token }
+  ActionController::HttpAuthentication::Token.encode_credentials(token, options)
+end
+
+def authenticate_with_token(token)
+  ActionController::HttpAuthentication::Token.encode_credentials(token)
 end

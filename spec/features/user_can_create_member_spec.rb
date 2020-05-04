@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 feature 'User can create a new member' do
+  before :each do
+    @user = create :member
+  end
+
   scenario 'with complete information' do
+    login_as @user
     visit members_path
 
     click_link 'Registrar'
@@ -27,6 +32,7 @@ feature 'User can create a new member' do
   end
 
   scenario 'missing required information' do
+    login_as @user
     visit members_path
 
     click_link 'Registrar'

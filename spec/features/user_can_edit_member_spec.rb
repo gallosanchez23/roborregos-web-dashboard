@@ -2,10 +2,11 @@ require 'rails_helper'
 
 feature 'User can edit an existing member' do
   before :each do
-    @member = FactoryBot.create(:member)
+    @member = create :member
   end
 
   scenario 'with complete information' do
+    login_as @member
     visit members_path
 
     find(:css, "a[href='/members/#{@member.id}/edit']").click
@@ -31,6 +32,7 @@ feature 'User can edit an existing member' do
   end
 
   scenario 'missing required information' do
+    login_as @member
     visit members_path
 
     find(:css, "a[href='/members/#{@member.id}/edit']").click

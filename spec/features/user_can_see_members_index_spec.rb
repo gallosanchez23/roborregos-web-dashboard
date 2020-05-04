@@ -2,12 +2,13 @@ require 'rails_helper'
 
 feature 'User can see member index' do
   before :each do
-    @member_inactive = Member.create! FactoryBot.attributes_for(:member, status: :inactive, role: :marketing)
-    @member_electronics = Member.create! FactoryBot.attributes_for(:member, role: :electronics)
-    @member_software = Member.create! FactoryBot.attributes_for(:member, role: :software)
+    @member_inactive = create :member, status: :inactive, role: :marketing
+    @member_electronics = create :member, role: :electronics
+    @member_software = create :member, role: :software
   end
 
   scenario 'without parameters' do
+    login_as @member_software
     visit members_path
 
     expect(page).to have_content('Miembros')
@@ -17,6 +18,7 @@ feature 'User can see member index' do
   end
 
   scenario 'with sort_by eq to :role' do
+    login_as @member_software
     visit members_path
 
     click_link 'Rol'
@@ -28,6 +30,7 @@ feature 'User can see member index' do
   end
 
   scenario 'with sort_by eq to :status' do
+    login_as @member_software
     visit members_path
 
     click_link 'Estatus'
