@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  before_create :generate_token
+
   devise :database_authenticatable
 
   validates :role,
@@ -14,10 +16,10 @@ class Member < ApplicationRecord
 
   has_many :team_members
   has_many :teams, through: :team_members
-  has_many :arrangement_members
-  has_many :arrangements, through: :arrangement_members
   has_many :event_members
   has_many :events, through: :event_members
+  has_many :arrangement_members
+  has_many :arrangements, through: :arrangement_members
 
   scope :sorted_by_role, -> { order('role') }
   scope :sorted_by_major, -> { order('major') }
@@ -61,5 +63,13 @@ class Member < ApplicationRecord
 
   def full_name
     "#{self.first_name} #{self.fathers_last_name} #{self.mothers_last_name}"
+  end
+
+  private
+
+  def generate_token
+    begin
+      self.token = SecureRandom.uuid
+    end while self.class.exists?(token: token)
   end
 end
