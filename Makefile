@@ -18,7 +18,7 @@ prepare-db:
 start: build prepare-db clean up
 
 #: Starts the containers with docker-compose in background
-up:
+up: clean
 	@docker-compose up -d web
 
 #: Removes the containers running in background
@@ -31,7 +31,7 @@ restart:
 
 #: Shows the logs of the web service container
 logs:
-	@docker-compose logs -f --tails 50 web
+	@docker-compose logs -f --tail 50 web
 
 #: Fires up a bash session inside the web service container
 shell:
@@ -40,3 +40,7 @@ shell:
 #: Fires up a bash session inside the rails console in web service container
 console:
 	@docker-compose run web rails c
+
+#: Runs RSpec with docker-compose test service
+test:
+	@docker-compose run --rm test
