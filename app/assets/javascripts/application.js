@@ -16,8 +16,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require bootstrap-notify.min
 //= require_tree .
 
-$(function () {
+$(function() {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
