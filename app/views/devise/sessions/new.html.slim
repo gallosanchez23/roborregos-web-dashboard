@@ -1,0 +1,17 @@
+#login-container.container-fluid.h-100
+  .row.justify-content-center.align-items-center.h-100
+    #login-panel.col-xs-10.col-sm-8.col-md-6.col-xl-4.text-center
+      .row.justify-content-center.align-items-center.h-100
+        #login-header.col-11
+          = image_tag 'header.png', class: 'w-100'
+
+        #login-form.col-8
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-group
+              = f.text_field :username, autofocus: true, placeholder: 'Username', class: 'form-control'
+
+            .form-group
+              = f.password_field :password, placeholder: 'Password', class: 'form-control'
+
+            .actions
+              = f.submit 'Log in', class: 'btn btn-orange'

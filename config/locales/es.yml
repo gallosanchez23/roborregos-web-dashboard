@@ -3,6 +3,7 @@ es:
     sidebar:
       title: 'RoBorregos'
       members: 'Miembros'
+      sign_out: 'Cerrar Sesión'
   members:
     index:
       title: 'Miembros'
@@ -61,6 +62,17 @@ es:
       label_role: 'Área:'
       label_start_date: 'Fecha de inicio:'
       label_generation: 'Generación:'
+  devise:
+    failure:
+      already_authenticated: 'Tu sesión ya ha sido iniciada.'
+      invalid: 'Usuario y/o contraseña inválida.'
+      not_found_in_database: 'Usuario y/o contraseña inválida.'
+      timeout: 'Tu sesión ha expirado. Inicia sesión nuevamente para continuar.'
+      unauthenticated: 'Necesitas iniciar sesión antes de continuar.'
+    sessions:
+      signed_in: 'Qué hay de nuevo?'
+      signed_out: 'Nos vemos pronto!'
+      already_signed_out: 'Nos vemos pronto!'
   options:
     members_role:
       software: 'Software'
