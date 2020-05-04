@@ -1,4 +1,4 @@
-class MembersController < ApplicationController
+class MembersController < BaseController
   def index
     params[:sort_by] ||= :generation
 
