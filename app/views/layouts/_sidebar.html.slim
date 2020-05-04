@@ -24,3 +24,7 @@ nav#sidebar
         li
           a href='#'
             | Crear
+
+    li
+      = link_to destroy_member_session_path do
+        = t('.sign_out')
