@@ -1,12 +1,14 @@
 # RoBorregos Web Dashboard
 
 Web application intended to be the team's data warehouse and dashbord for
-managmenet of information related to team RoBorregos (international robotics
+management of information related to team RoBorregos (international robotics
 team). Homemade project, developed by RoBorregos' members. Unfortunately, you
 can't consult more than the login page of this dashboard, since you would
-require a valid usernamen and password to see the rest of it, but you can check
+require a valid username and password to see the rest of it, but you can check
 out our public site at [roborregos.com](https://roborregos.com) or
 [roborregos.mx](https://roborregos.mx).
+
+
 
 ## Table of contents
 
@@ -19,6 +21,8 @@ out our public site at [roborregos.com](https://roborregos.com) or
 		- [Setup](#setup)
 		- [Running the stack for development](#running-the-stack-for-development)
 		- [Stopping services](#stopping-services)
+
+
 
 ## Project Details
 
@@ -35,11 +39,11 @@ You should ask for access to these tools if you don't have it already:
 * [Github repo](https://github.com/gallosanchez23/roborregos-web-dashboard)
 * [Heroku](https://www.heroku.com/)
 
+
+
 ## Development
 
-### Setup
-
-#### Third-party
+### Third-party
 
 Before setting up the project, you should have installed the following
 development tools:
@@ -48,10 +52,127 @@ development tools:
 * [Docker](https://runnable.com/docker/getting-started/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-#### Initial build
+### Running the stack of development
 
-Once you have installed the required third-party software, you can follow this
+We provide two different ways to setup your local project: a custom Makefile
+and docker-compose native commands. As we strongly encourage you to use our
+Makefile, you can still use docker-compose. Also, it could be useful some
+knowledge about docker if you want to have more specific interactions with the
+container. With this being said, we will continue using Makefile commands, but
+you can obtain the same result following [these](#setup-with-docker) steps.
+
+Once you have installed the required third-party software, you can follow these
 steps:
+
+1. Clone the project repository on your local machine.
+
+	SSH:
+
+	```bash
+	$ git clone git@github.com:gallosanchez23/roborregos-web-dashboard.git
+	```
+
+	or HTTPS:
+	```bash
+	$ git clone https://github.com/gallosanchez23/roborregos-web-dashboard.git
+	```
+
+2. Enter the project's directory
+
+	```bash
+	$ cd roborregos-web-dashboard
+	```
+
+3. Create the Docker image (This could take a couple minutes).
+
+	```bash
+	$ make start
+	```
+
+***Note: If using Linux, remember that you may need the sudo command in order
+to avoid permission-denied errors. Other options is to apply executable
+permissions to the docker-compose binary. You can fine more information about
+this in the [installation guide](https://docs.docker.com/compose/install/).***
+
+You are now ready to open the application and start collaborating with the
+project. Go to your browser and enter [localhost:3000](http://localhost:3000/)
+to see the running application. Enjoy!
+
+### Makefile commands
+
+Other Makefile commands available for you are:
+
+To buil a Docker image from the current docker-compose.yml file, or (if
+existing) docker-compose.override.yml:
+
+```bash
+$ make build
+```
+
+To remove any dangling images, containers and temporary files (from Docker)
+related to the roborregos-web-dashboard project:
+
+```bash
+$ make clean
+```
+
+To create and migrate project's development and test db's:
+
+```bash
+$ make prepare-db
+```
+
+🌟 - To create and completely setup your Docker development environment.
+
+```bash
+$ make start
+```
+
+To use the existing project's image to start the containers with docker-compose
+running in background:
+
+```bash
+$ make up
+```
+
+🌟 - To turn down and remove the project's containers running in background:
+
+```bash
+$ make down
+```
+
+To restart only the web service:
+
+```bash
+$ make restart
+```
+
+🌟 - To show the last 50 logs from the running web service container:
+
+```bash
+$ make logs
+```
+
+🌟 - To fire up a bash session inside the running web service container:
+
+```bash
+$ make shell
+```
+
+🌟 - To fire up a bash session inside the running web service container and
+execute `rails c` command to place you inside rails console:
+
+```bash
+$ make console
+```
+
+🌟 - To run all specs within test service container:
+
+```bash
+$ make test
+```
+
+### Setup with Docker
 
 1. Clone the project repository on your local machine.
 
@@ -78,50 +199,48 @@ steps:
 	$ docker-compose build
 	```
 
-***Note: If using Linux, remember that you may need the sudo command in order
-to avoid permission-denied errors. Other options is to apply executable
-permissions to the docker-compose binary. You can fine more information about
-this in the [instalation guide](https://docs.docker.com/compose/install/).***
+	***Note: If using Linux, remember that you may need the sudo command in order
+	to avoid permission-denied errors. Other options is to apply executable
+	permissions to the docker-compose binary. You can fine more information about
+	this in the [installation guide](https://docs.docker.com/compose/install/).***
 
-### Running the stack for development
+4. If it is the first time you are running the project, you will need to create
+	the project's database. For this, fire up a new terminal and navigate to the
+	project's directory. Once you are there, run:
 
-If it is the first time you are running the project, you will need to create
-the project's database. For this, fire up a new terminal and navigate to the
-project's directory. Once you are there, run:
+	```bash
+	$ docker-compose run web rails db:create
+	```
 
-```bash
-$ docker-compose run web rails db:create
-```
+	This command will use Rails within the existing and running container to
+	create the development and test databases for our project. This should output
+	something like:
 
-This command will use Rails within the existing and running container to create
-the development and test databases for our project. This should output
-something like:
+	```bash
+	Starting roborregos-web-dashboard_db_1 ... done
+	Created database 'roborregos_dashboard_development'
+	Created database 'roborregos_dashboard_test'
+	```
 
-```bash
-Starting roborregos-web-dashboard_db_1 ... done
-Created database 'roborregos_dashboard_development'
-Created database 'roborregos_dashboard_test'
-```
+5. Finally, you will need to run the pending db migrations. For this, run:
 
-Finally, you will need to run the pending db migrations. For this, run:
+	```bash
+	$ docker-compose run web rails db:migrate
+	```
 
-```bash
-$ docker-compose run web rails db:migrate
-```
+	If you've previously done all the above, simply run:
 
-If you've previously done all the above, simply run:
+	```bash
+	$ docker-compose up
+	```
 
-```bash
-$ docker-compose up
-```
+	This command will start the Rails application and display the logs on your
+	terminal. Use `Ctrl + C` to exit the logs and turn the application down.
+	Otherwise, in order to run the service in the background, just run:
 
-This command will start the Rails application and display the logs on your
-terminal. Use `Ctrl + C` to exit the logs and turn the application down.
-Otherwise, in order to run the service in the background, just run:
-
-```bash
-$ docker-compose up -d
-```
+	```bash
+	$ docker-compose up -d
+	```
 
 You are now ready to open the application and start collaborating with the
 project. Go to your browser and enter [localhost:3000](http://localhost:3000/)
