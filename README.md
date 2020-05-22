@@ -18,9 +18,12 @@ out our public site at [roborregos.com](https://roborregos.com) or
 		- [Development team](#development-team)
 		- [Management tools](#management-tools)
 	- [Development](#development)
-		- [Setup](#setup)
-		- [Running the stack for development](#running-the-stack-for-development)
+		- [Third-party](#third-party)
+		- [Running the stack of development](#running-the-stack-of-development)
+		- [Makefile commands](#makefile-commands)
+		- [Setup with Docker](#setup-with-docker)
 		- [Stopping services](#stopping-services)
+		- [Good to know commands](#good-to-know-commands)
 
 
 
