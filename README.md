@@ -1,10 +1,10 @@
 # RoBorregos Web Dashboard
 
 Web application intended to be the team's data warehouse and dashbord for
-managmenet of information related to team RoBorregos (international robotics
+management of information related to team RoBorregos (international robotics
 team). Homemade project, developed by RoBorregos' members. Unfortunately, you
 can't consult more than the login page of this dashboard, since you would
-require a valid usernamen and password to see the rest of it, but you can check
+require a valid username and password to see the rest of it, but you can check
 out our public site at [roborregos.com](https://roborregos.com) or
 [roborregos.mx](https://roborregos.mx).
 
@@ -56,7 +56,7 @@ development tools:
 
 We provide two different ways to setup your local project: a custom Makefile
 and docker-compose native commands. As we strongly encourage you to use our
-Makefile, you can still use docker-compose. Also, it cold be useful some
+Makefile, you can still use docker-compose. Also, it could be useful some
 knowledge about docker if you want to have more specific interactions with the
 container. With this being said, we will continue using Makefile commands, but
 you can obtain the same result following [these](#setup-with-docker) steps.
@@ -92,7 +92,7 @@ steps:
 ***Note: If using Linux, remember that you may need the sudo command in order
 to avoid permission-denied errors. Other options is to apply executable
 permissions to the docker-compose binary. You can fine more information about
-this in the [instalation guide](https://docs.docker.com/compose/install/).***
+this in the [installation guide](https://docs.docker.com/compose/install/).***
 
 You are now ready to open the application and start collaborating with the
 project. Go to your browser and enter [localhost:3000](http://localhost:3000/)
@@ -202,7 +202,7 @@ $ make test
 	***Note: If using Linux, remember that you may need the sudo command in order
 	to avoid permission-denied errors. Other options is to apply executable
 	permissions to the docker-compose binary. You can fine more information about
-	this in the [instalation guide](https://docs.docker.com/compose/install/).***
+	this in the [installation guide](https://docs.docker.com/compose/install/).***
 
 4. If it is the first time you are running the project, you will need to create
 	the project's database. For this, fire up a new terminal and navigate to the
