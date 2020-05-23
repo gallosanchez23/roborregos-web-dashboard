@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :members, path: ''
-
+  
   devise_scope :member do
     get 'sign_in', to: 'devise/sessions#new'
     get 'sign_out', to: 'devise/sessions#destroy'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   authenticate :member do
     root to: 'members#index', as: :authenticated_root
 
-    resources :members
+    resources :members, :teams
   end
 
   namespace :api do
