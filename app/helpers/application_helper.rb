@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def is_active(controller)
+    params[:controller] == controller ? "active" : nil
+  end
+
   def alert_class(key)
     case key
     when 'success'
