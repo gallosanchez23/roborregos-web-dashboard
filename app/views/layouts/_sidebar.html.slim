@@ -6,9 +6,13 @@ nav#sidebar
   ul.list-unstyled.components
     p
       = controller_name.capitalize
-    li.active
+    li class=[is_active('members')]
       = link_to members_path do
         = t('.members')
+
+    li class=[is_active('categories')]
+      = link_to categories_path do
+        = t('.categories')
 
     li
       a href='#'
