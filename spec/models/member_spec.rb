@@ -12,8 +12,10 @@ RSpec.describe Member, type: :model do
     it { should validate_presence_of(:generation) }
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:start_date) }
+    it { should validate_presence_of(:github_username) }
     it { should validate_presence_of(:fathers_last_name) }
     it { should validate_presence_of(:mothers_last_name) }
+    it { should validate_uniqueness_of(:github_username) }
     it { should be_valid }
   end
 
