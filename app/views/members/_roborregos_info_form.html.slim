@@ -8,16 +8,16 @@
         .form-group.row
           = f.label :generation, t('.label_generation'), class: 'col-sm-3 col-form-label'
           .col-sm-9
-            = f.text_field :generation, class: 'form-control'
+            = f.text_field :generation, class: 'form-control', required: true
         .form-group.row
           = f.label :role, t('.label_role'), class: 'col-sm-3 col-form-label'
           .col-sm-9
-            = f.select :role, role_options, {}, class: 'form-control'
+            = f.select :role, role_options, {}, class: 'form-control', required: true
         .form-group.row
           = f.label :status, t('.label_status'), class: 'col-sm-3 col-form-label'
           .col-sm-9
-            = f.select :status, status_options, {}, class: 'form-control'
+            = f.select :status, status_options, {}, class: 'form-control', required: true
         .form-group.row
           = f.label :start_date, t('.label_start_date'), class: 'col-sm-3 col-form-label'
           .col-sm-9
-            = f.date_field :start_date, class: 'form-control'
+            = f.date_field :start_date, class: 'form-control', required: true
