@@ -1,7 +1,6 @@
 module ApplicationHelper
-
-  def is_active(controller)
-    params[:controller] == controller ? "active" : nil
+  def sidebar_classes(controller)
+    'active' if controller_name == controller
   end
 
   def alert_class(key)

@@ -19,12 +19,12 @@ header
         = fa_icon 'trash-o', class: 'mr-2'
         = t('.delete')
 
-#member_info_section.content-section
+#team_info_section.content-section
   .row.justify-content-center
     .col-md-10
-      #contact_info.card
+      #general_info.card
         .card-header
-          = fa_icon 'address-book fw', class: 'mr-2'
+          = fa_icon 'info fw', class: 'mr-2'
           = t('.section_title')
         ul.list-group.list-group-flush
           li.list-group-item
@@ -32,11 +32,10 @@ header
               .col-4.info-title
                 = t('.label_github_url')
               .col-8
-                a href = @team.github_url
-                  = @team.github_url
+                = @team.github_url
           li.list-group-item
             .row
               .col-4.info-title
                 = t('.label_category')
               .col-8
-                = category_name
+                = @team.category_name
