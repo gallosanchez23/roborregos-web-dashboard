@@ -20,10 +20,12 @@ class MembersController < BaseController
 
   def create
     @member = Member.new(member_params)
+
     if @member.save
       redirect_to @member
     else
-      render :new
+      flash[:error] = t('messages.errors.could_not_save_member')
+      redirect_to new_member_path
     end
   end
 
@@ -33,10 +35,12 @@ class MembersController < BaseController
 
   def update
     @member = Member.find(params[:id])
+
     if @member.update(member_params)
       redirect_to @member
     else
-      render :edit
+      flash[:error] = t('messages.errors.could_not_save_member')
+      redirect_to edit_member_path(params[:id])
     end
   end
 
