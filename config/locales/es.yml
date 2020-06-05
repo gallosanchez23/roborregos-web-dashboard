@@ -69,13 +69,13 @@ es:
       return: 'Regresar'
       register: 'Registrar'
     category:
-      delete_confirmation: '¿Estás seguro de que quieres eliminar este miembro?'
+      delete_confirmation: '¿Estás seguro de que quieres eliminar esta categoría?'
       tooltip_view: 'Detalles'
       tooltip_delete: 'Eliminar'
     show:
       return: 'Regresar'
       delete: 'Eliminar'
-      delete_confirmation: '¿Estás seguro de que quieres eliminar este miembro?'
+      delete_confirmation: '¿Estás seguro de que quieres eliminar esta categoría?'
       label_name: 'Nombre:'
       label_description: 'Descripción:'
       label_reference_url: 'Url de Referencia:'

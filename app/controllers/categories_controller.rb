@@ -1,6 +1,6 @@
 class CategoriesController < BaseController
   def index
-    @categories = Category.all;
+    @categories = Category.all
   end
 
   def show
