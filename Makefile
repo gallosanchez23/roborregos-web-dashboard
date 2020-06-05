@@ -15,7 +15,7 @@ prepare-db:
 	@docker-compose run --rm web rails db:create db:test:prepare db:migrate
 
 #: Setups your Docker development environment (build, prepare, clean, up)
-start: build prepare-db clean up
+start: build prepare-db up
 
 #: Starts the containers with docker-compose in background
 up: clean
