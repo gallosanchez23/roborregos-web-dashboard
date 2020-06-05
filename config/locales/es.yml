@@ -87,7 +87,7 @@ es:
       label_name: 'Nombre:'
       label_start_date: 'Fecha Inicio:'
       label_end_date: 'Fecha Terminación:'
-      label_sponsor_id: 'Patrocinador:'
+      label_sponsor_id: 'Patrocinador Involucrado:'
     new:
       title: 'Nuevo evento'
       submit: 'Guardar'
@@ -96,12 +96,12 @@ es:
       title: 'Editar - %{event}'
       submit: 'Guardar'
       cancel: 'Regresar'
-    info_form:
+    general_info_form:
       section_title: 'Información General'
       label_name: 'Nombre:'
       label_start_date: 'Fecha Inicio:'
       label_end_date: 'Fecha Terminación:'
-      label_sponsor_id: 'Patrocinador:'
+      label_sponsor_id: 'Patrocinador Involucrado:'
       label_description: 'Descripción:'
   devise:
     failure:

@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   authenticate :member do
     root to: 'members#index', as: :authenticated_root
 
-    resources :members, :events
+    resources :events
+    resources :members
   end
 
   namespace :api do

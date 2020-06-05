@@ -8,4 +8,9 @@ class Event < ApplicationRecord
 
   has_many :event_members
   has_many :members, through: :event_members
+
+  def sponsor_name
+    Sponsor.find(self.sponsor_id).name
+  end
+
 end

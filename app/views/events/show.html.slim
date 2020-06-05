@@ -22,7 +22,7 @@ header
 #event_info_section.content-section
   .row.justify-content-center
     .col-md-10
-      #contact_info.card
+      #general_info.card
         .card-header
           = fa_icon 'info fw', class: 'mr-2'
           = t('.section_title')
@@ -50,4 +50,4 @@ header
               .col-4.info-title
                 = t('.label_sponsor_id')
               .col-8
-                = sponsor_name
+                = @event.sponsor_name

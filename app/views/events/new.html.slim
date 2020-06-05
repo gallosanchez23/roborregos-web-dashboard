@@ -9,9 +9,8 @@ header
   .row.justify-content-center
     .col-md-9
       = form_with model: @event, id: 'new_event_form' do |f|
-        = render partial: 'info_form', locals: { f: f }
+        = render partial: 'general_info_form', locals: { f: f }
         
         .submit-event-form-section
-          = f.hidden_field :username
           = f.submit t('.submit'), class: 'btn btn-success'
           = link_to t('.cancel'), events_path, class: 'btn btn-danger ml-3'
