@@ -10,9 +10,12 @@ class Member < ApplicationRecord
             :generation,
             :first_name,
             :start_date,
+            :github_username,
             :fathers_last_name,
             :mothers_last_name,
             presence: true
+
+  validates :github_username, uniqueness: true
 
   has_many :team_members
   has_many :teams, through: :team_members
