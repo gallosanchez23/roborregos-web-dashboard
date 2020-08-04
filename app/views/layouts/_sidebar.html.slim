@@ -15,8 +15,8 @@ nav#sidebar
         = t('.events')
 
     li
-      a href='#'
-        | Patrocinadores
+      = link_to service_apps_path do
+        = t('.service_apps')
 
     li
       a.dropdown-toggle href='#tournamentsSubMenu' data-toggle='collapse' aria-expanded='false'

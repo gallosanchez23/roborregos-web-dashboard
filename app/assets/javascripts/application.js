@@ -18,8 +18,10 @@
 //= require bootstrap
 //= require bootstrap-notify.min
 //= require bootstrap-datepicker
+//= require clipboard
 //= require_tree .
 
 $(function() {
   $('[data-toggle="tooltip"]').tooltip()
+  clipboard = new Clipboard('.clipboard-btn');
 });

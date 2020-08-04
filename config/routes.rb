@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     resources :events
     resources :members
+    resources :service_apps, only: [:index, :create, :destroy]
   end
 
   namespace :api do
