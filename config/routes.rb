@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     root to: 'members#index', as: :authenticated_root
     resources :categories
     resources :members
+    resources :service_apps, only: [:index, :create, :destroy]
   end
 
   namespace :api do

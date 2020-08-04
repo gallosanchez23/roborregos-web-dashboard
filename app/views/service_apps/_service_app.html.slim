@@ -1,0 +1,19 @@
+li.list-group-item.single-service-app
+  .row
+    .col
+      = service_app.name
+      small.ml-2
+        .text-secondary.d-inline-block
+          = l(service_app.created_at, format: :short_date)
+      p.mb-0.mt-2
+        = service_app.description
+    .col-5.pull-right
+      .form-group.row.justify-content-center.mb-0
+        label.col-sm-12.col-lg-5.col-form-label.text-right
+          = t('.access_token_label')
+        .col-sm-12.col-lg-7.pl-0
+          .input-group
+            = text_field_tag "access_token_#{service_app.id}", service_app.api_key.access_token, readonly: true, class: 'form-control'
+            .input-group-append
+              button.btn.btn-secondary.clipboard-btn [data-clipboard-target="#access_token_#{service_app.id}"]
+                = fa_icon 'clone fw'

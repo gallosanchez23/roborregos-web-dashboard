@@ -20,6 +20,7 @@ feature 'User can create a new member' do
     fill_in 'member_fathers_last_name', with: 'Sanchez'
     fill_in 'member_mothers_last_name', with: 'Yepiz'
     select 'ITC', from: 'member_major'
+    fill_in 'member_github_username', with: 'gallosanchez23'
     fill_in 'member_email', with: 'gallo@gmail.com'
     fill_in 'member_generation', with: '2'
     select 'Software', from: 'member_role'
