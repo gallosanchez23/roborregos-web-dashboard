@@ -17,8 +17,10 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-notify.min
+//= require clipboard
 //= require_tree .
 
 $(function() {
   $('[data-toggle="tooltip"]').tooltip()
+  clipboard = new Clipboard('.clipboard-btn');
 });

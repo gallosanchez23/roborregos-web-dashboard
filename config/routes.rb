@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :members
     resources :teams
+    resources :service_apps, only: [:index, :create, :destroy]
   end
 
   namespace :api do

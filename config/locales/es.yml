@@ -4,6 +4,7 @@ es:
       title: 'RoBorregos'
       members: 'Miembros'
       teams: 'Equipos'
+      service_apps: 'Service Apps'
       sign_out: 'Cerrar Sesión'
   members:
     index:
@@ -93,6 +94,18 @@ es:
       section_title : 'Información General'
       label_category: 'Categoría'
       label_github_url: 'Url de Github'
+  service_apps:
+    index:
+      title: 'Service Apps'
+      register: 'Registrar'
+    service_app:
+      access_token_label: 'Access token:'
+    new_service_app_modal:
+      title: 'Nuevo Service App'
+      submit: 'Guardar'
+      cancel: 'Cancelar'
+      name_placeholder: 'Nombre'
+      description_placeholder: 'Descripción...'
   devise:
     failure:
       already_authenticated: 'Tu sesión ya ha sido iniciada.'
@@ -116,3 +129,25 @@ es:
       conditioned: 'Condicionado'
       inactive: 'Inactivo'
       affiliated: 'Afiliado'
+  messages:
+    errors:
+      could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
+      could_not_save_service_app: 'Ha sucedido un error al guardar este service app, inténtalo de nuevo más tarde.'
+  date:
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+  time:
+    formats:
+      short_date: '%B %d, %Y'

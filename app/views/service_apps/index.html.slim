@@ -1,0 +1,22 @@
+header
+  .title-row.row.align-items-center
+    .col-12
+      h1
+        = fa_icon 'cubes fw', class: 'mr-2'
+        = t('.title')
+  .nav-row.row.align-items-end.pb-2
+    .col-2
+    .col-8
+    .col-2
+      button.btn.btn-success type='button' data-toggle='modal' data-target='#newServiceAppModal'
+        = fa_icon 'plus', class: 'mr-2'
+        = t('.register')
+
+#service_apps_list_section.content-section
+  .row.justify-content-center
+    .col-md-10
+      #service_apps_list.card
+        ul.list-group.list-group-flush
+          = render partial: 'service_app', collection: @service_apps
+
+= render partial: 'new_service_app_modal'
