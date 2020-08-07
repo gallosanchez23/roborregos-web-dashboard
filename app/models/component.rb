@@ -5,4 +5,5 @@ class Component < ApplicationRecord
             presence: true
 
   belongs_to :component_category
+  has_many   :reservation_details
 end
