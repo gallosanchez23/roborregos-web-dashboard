@@ -10,7 +10,6 @@ class Team < ApplicationRecord
   has_many :members, through: :team_members
 
   def category_name
-    Category.find(self.category_id).name
+    self.category.name
   end
-
 end
