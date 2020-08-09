@@ -6,10 +6,13 @@ nav#sidebar
   ul.list-unstyled.components
     p
       = controller_name.capitalize
-
-    li.active
+    li [ class=sidebar_classes('members') ]
       = link_to members_path do
         = t('.members')
+
+    li [ class=sidebar_classes('teams') ]
+      = link_to teams_path do
+        = t('.teams')
 
     li
       = link_to service_apps_path do

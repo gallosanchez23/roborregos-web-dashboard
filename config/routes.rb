@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     root to: 'members#index', as: :authenticated_root
 
     resources :members
+    resources :teams
     resources :service_apps, only: [:index, :create, :destroy]
   end
 
