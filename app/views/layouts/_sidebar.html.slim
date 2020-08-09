@@ -14,9 +14,9 @@ nav#sidebar
       = link_to events_path do
         = t('.events')
 
-    li
-      = link_to service_apps_path do
-        = t('.service_apps')
+    li [ class=sidebar_classes('teams') ]
+      = link_to teams_path do
+        = t('.teams')
 
     li
       a.dropdown-toggle href='#tournamentsSubMenu' data-toggle='collapse' aria-expanded='false'
