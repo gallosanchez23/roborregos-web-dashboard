@@ -105,6 +105,7 @@ es:
       label_end_date: 'Fecha Terminación:'
       label_sponsor_id: 'Patrocinador Involucrado:'
       label_description: 'Descripción:'
+      no_related_sponsor: 'Sin patrocinador relacionado'
   teams:
     team:
       delete_confirmation: '¿Estás seguro de que quieres eliminar este equipo?'
@@ -172,6 +173,8 @@ es:
       affiliated: 'Afiliado'
   messages:
     errors:
+      could_not_save_team: 'Ha sucedido un error al guardar este equipo, inténtalo de nuevo más tarde.'
+      could_not_save_event: 'Ha sucedido un error al guardar este evento, inténtalo de nuevo más tarde.'
       could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
       could_not_save_service_app: 'Ha sucedido un error al guardar este service app, inténtalo de nuevo más tarde.'
   date:
