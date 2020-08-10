@@ -8,14 +8,15 @@
 @import 'members';
 @import 'sidebar';
 @import 'styles';
+@import 'teams';
 
 header {
   position: relative;
   background: linear-gradient(
-      rgba(18, 24, 30, 0.5),
-      rgba(18, 24, 30, 0.5)
-      ),
-      url(header_background.jpg);
+    rgba(18, 24, 30, 0.5),
+    rgba(18, 24, 30, 0.5)
+    ),
+    url(header_background.jpg);
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
@@ -25,7 +26,7 @@ header {
   text-align: center;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
-  
+
 header .title-row {
   height: 80%;
 }
