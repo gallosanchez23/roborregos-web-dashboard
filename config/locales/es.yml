@@ -3,7 +3,7 @@ es:
     sidebar:
       title: 'RoBorregos'
       members: 'Miembros'
-      categories: 'Categorias'
+      categories: 'Categorías'
       teams: 'Equipos'
       service_apps: 'Service Apps'
       sign_out: 'Cerrar Sesión'
@@ -163,6 +163,7 @@ es:
   messages:
     errors:
       could_not_save_member: 'Ha sucedido un error al guardar este miembro, inténtalo de nuevo más tarde.'
+      could_not_save_category: 'Ha sucedido un error al guardar esta categoría, inténtalo de nuevo más tarde.'
       could_not_save_service_app: 'Ha sucedido un error al guardar este service app, inténtalo de nuevo más tarde.'
   date:
     month_names:
