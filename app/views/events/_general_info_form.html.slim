@@ -24,4 +24,4 @@
         .form-group.row
           = f.label :sponsor_id, t('.label_sponsor_id'), class: 'col-sm-3 col-form-label'
           .col-sm-9
-            = f.select :sponsor_id, sponsor_options, {}, class: 'form-control'
+            = f.select :sponsor_id, sponsor_options, { include_blank: t('.no_related_sponsor')}, class: 'form-control'
