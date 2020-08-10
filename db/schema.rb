@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_010927) do
+ActiveRecord::Schema.define(version: 2020_08_06_215601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,23 @@ ActiveRecord::Schema.define(version: 2020_05_04_010927) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "component_categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.string "name"
+    t.bigint "component_category_id"
+    t.string "img_path"
+    t.integer "stock"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["component_category_id"], name: "index_components_on_component_category_id"
+  end
+
   create_table "event_members", force: :cascade do |t|
     t.bigint "event_id"
     t.bigint "member_id"
@@ -108,6 +125,24 @@ ActiveRecord::Schema.define(version: 2020_05_04_010927) do
     t.string "token"
     t.index ["token"], name: "index_members_on_token", unique: true
     t.index ["username"], name: "index_members_on_username", unique: true
+  end
+
+  create_table "reservation_details", force: :cascade do |t|
+    t.bigint "reservation_id"
+    t.bigint "component_id"
+    t.boolean "returned"
+    t.datetime "returned_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["component_id"], name: "index_reservation_details_on_component_id"
+    t.index ["reservation_id"], name: "index_reservation_details_on_reservation_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_reservations_on_member_id"
   end
 
   create_table "service_apps", force: :cascade do |t|
