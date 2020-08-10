@@ -1,6 +1,6 @@
 class EventsController < BaseController
   def index
-    @events = Event.all 
+    @events = Event.all
   end
 
   def show
@@ -13,10 +13,12 @@ class EventsController < BaseController
 
   def create
     @event = Event.new(event_params)
+
     if @event.save
       redirect_to @event
     else
-      render :new
+      flash[:error] = t('messages.errors.could_not_save_event')
+      redirect_to :new
     end
   end
 
@@ -28,16 +30,19 @@ class EventsController < BaseController
 
   def update
     @event = Event.find(params[:id])
+
     if @event.update(event_params)
       redirect_to @event
     else
-      render :edit
+      flash[:error] = t('messages.errors.could_not_save_event')
+      redirect_to :edit
     end
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
+
     redirect_to events_path
   end
 
