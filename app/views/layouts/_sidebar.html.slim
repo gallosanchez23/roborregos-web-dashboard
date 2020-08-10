@@ -10,6 +10,10 @@ nav#sidebar
       = link_to members_path do
         = t('.members')
 
+    li [ class=sidebar_classes('categories') ]
+      = link_to categories_path do
+        = t('.categories')
+
     li [ class=sidebar_classes('teams') ]
       = link_to teams_path do
         = t('.teams')
